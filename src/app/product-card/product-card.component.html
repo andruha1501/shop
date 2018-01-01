@@ -4,11 +4,11 @@
     <h5 class="card-title">{{product.payload.val().title}}</h5>
     <p class="card-text">{{product.payload.val().price | currency:'USD':symbol}}</p>
   </div>
-  <div *ngIf="showActions" class="card-footer">
-    <button *ngIf="getQuantity() === 0; else updateQuatity" (click)="addToCard()" class="btn btn-primary btn-block" href="">Add to Card</button>    
+  <div *ngIf="showActions && shoppingCart" class="card-footer">
+    <button *ngIf="shoppingCart.getQuantity(product) === 0; else updateQuatity" (click)="addToCard()" class="btn btn-primary btn-block" href="">Add to Card</button>    
     <ng-template #updateQuatity>
-      <!-- <app-product-quantity [product]="product" [shopping-cart]="shoppingCart"></app-product-quantity> -->
-      <div class="row no-gutters">
+      <app-product-quantity [product]="product" [shopping-cart]="shoppingCart"></app-product-quantity>
+      <!-- <div class="row no-gutters">
         <div class="col-2">
           <button (click)="removeFromCart()" class="btn btn-primary btn-block">-</button>
         </div>
@@ -16,7 +16,7 @@
         <div class="col-2">
           <button (click)="addToCard()" class="btn btn-primary btn-block">+</button>
         </div>
-      </div>
+      </div> -->
     </ng-template>
   </div>
 </div>

@@ -8,7 +8,6 @@ import { ShoppingCartService } from '../shopping-cart.service';
   styleUrls: ['./product-quantity.component.scss']
 })
 export class ProductQuantityComponent implements OnInit {
-
   @Input('product') product: Product;
   @Input('shopping-cart') shoppingCart; 
   
