@@ -1,6 +1,6 @@
 import { AngularFireObject } from 'angularfire2/database';
-import { ShoppingCart } from './../models/shopping-cart';
-import { AppUser } from './../models/app-user';
+import { ShoppingCart } from '../shared/models/shopping-cart';
+import { AppUser } from '../shared/models/app-user';
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { ShoppingCartService } from '../shopping-cart.service';

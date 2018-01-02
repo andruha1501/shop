@@ -5,23 +5,28 @@
   </p>
   <table class="table">
     <thead>
+      <th></th>      
       <th>Product</th>
-      <th>Quantity</th>
-      <th>Price</th>
+      <th class="text-center"  style="width:200px">Quantity</th>
+      <th class="text-right">Price</th>
     </thead>
     <tbody>
       <tr *ngFor="let item of cart.items">
-        <td>{{item.product.title}}</td>
-        <td><app-product-quantity [product]="item.product" [shopping-cart]="cart"></app-product-quantity></td>
-        <td>{{item.totalPrice | currency:'USD':symbol}}</td>
+        <td><div [style.backgroundImage]="'url('+item.imageUrl+')'" class="thumbnail"></div></td>
+        <td>{{item.title}}</td>
+        <td ><app-product-quantity [product]="item" [shopping-cart]="cart"></app-product-quantity></td>
+        <td class="text-right">{{item.totalPrice | currency:'USD':symbol}}</td>
       </tr>
     </tbody>
     <tfoot>
       <tr>
+        <th></th>        
         <th></th>
         <th></th>
-        <th>{{cart.totalPrice | currency:'USD':symbol}}</th>
+        <th class="text-right">{{cart.totalPrice | currency:'USD':symbol}}</th>
       </tr>
     </tfoot>
   </table>
+  <a *ngIf="cart.items.length" routerLink="/check-out" class="btn btn-primary ">Check Out</a>  
+  <button *ngIf="cart.items.length" (click)="clearCart()" class="btn btn-danger float-right">Clear Shopping Cart</button>
 </ng-container>
