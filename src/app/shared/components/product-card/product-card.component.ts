@@ -9,7 +9,7 @@ import { Product } from 'app/shared/models/product';
   styleUrls: ['./product-card.component.scss']
 })
 export class ProductCardComponent implements OnInit {
-  @Input('product') product: Product;
+  @Input('product') product: any;
   @Input('show-actions') showActions = true;
   @Input('shopping-cart') shoppingCart: ShoppingCart; 
   

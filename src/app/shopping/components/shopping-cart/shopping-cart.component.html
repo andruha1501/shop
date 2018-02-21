@@ -15,7 +15,7 @@
         <td><div [style.backgroundImage]="'url('+item.imageUrl+')'" class="thumbnail"></div></td>
         <td>{{item.title}}</td>
         <td ><app-product-quantity [product]="item" [shopping-cart]="cart"></app-product-quantity></td>
-        <td class="text-right">{{item.totalPrice | currency:'USD':symbol}}</td>
+        <td class="text-right">{{item.totalPrice | currency:'USD':'symbol'}}</td>
       </tr>
     </tbody>
     <tfoot>
@@ -23,7 +23,7 @@
         <th></th>        
         <th></th>
         <th></th>
-        <th class="text-right">{{cart.totalPrice | currency:'USD':symbol}}</th>
+        <th class="text-right">{{cart.totalPrice | currency:'USD':'symbol'}}</th>
       </tr>
     </tfoot>
   </table>
